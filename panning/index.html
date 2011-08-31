@@ -1,0 +1,65 @@
+<html>
+<head>
+	<title>youngpup.net: ypSimpleScroll demo</title>
+	<script language="javascript" src="../ypSimpleScrollC.js"></script>
+	<script language="javascript">
+		var test  = new ypSimpleScroll("myScroll", 20, 50, 250, 250, 30, 736, 200, 50)
+		window.onload = function() {
+			test.load()
+			var ts = document.layers ? document.layers["triggers"] : document.all ? document.all.triggers : document.getElementById("triggers")
+			ts = document.layers ? ts.layers : document.all ? ts.all.tags("DIV") : ts.getElementsByTagName("DIV")
+			for (var i = 0; i < ts.length; i++) {
+				if (document.layers) ts[i].captureEvents(Event.MOUSEDOWN | Event.MOUSEUP)
+				ts[i].onmouseover = function() { test.startScroll(this.id.substring(7, this.id.length)) }
+				ts[i].onmousedown = function() { test.overrideScrollSpeed(300); return false; }
+				ts[i].onmouseup   = function() { test.overrideScrollSpeed(100) }
+				ts[i].onmouseout  = function() { test.endScroll() }
+			}
+		}
+	</script>
+
+	<style type="text/css">
+		/* just basic text formatting - nothing special */
+		@import "/_common/demo.css";
+
+		#mask { position:absolute; top:40px; left:15px; z-index:2; }
+		#myScrollContainer { z-index:1; }
+
+		#triggers { position:absolute; left:15px; top:40px; z-index:3; }
+		#triggers div { position:absolute; width:20px; height:20px; clip:rect(0 20 20 0); }
+
+		#trigger90  { left:130px; top:4px;   }
+		#trigger45  { left:217px; top:44px;  }
+		#trigger0   { left:259px; top:128px; }
+		#trigger315 { left:222px; top:216px; }
+		#trigger270 { left:130px; top:256px; }
+		#trigger225 { left:43px;  top:218px; }
+		#trigger180 { left:6px;   top:128px; }
+		#trigger135 { left:38px;  top:47px;  }
+	</style>
+</head>
+
+<body>
+	<b>mouseover</b> or <b>mousedown</b> on the compass points to pan the map.<br /><br />
+
+	<div id="mask"><img src="compass.gif" usemap="#compass" width="279" height="285" border="0"></div>
+	<div id="myScrollContainer">
+		<div id="myScrollContent">
+			<img id="map" src="img_mapbig.jpg" width="736" height="500" />
+		</div>
+	</div>
+
+	<div id="triggers">
+		<div id="trigger90"><img src="x.gif" width="20" height="20" /></div>
+		<div id="trigger45"><img src="x.gif" width="20" height="20" /></div>
+		<div id="trigger0"><img src="x.gif" width="20" height="20" /></div>
+		<div id="trigger315"><img src="x.gif" width="20" height="20" /></div>
+		<div id="trigger270"><img src="x.gif" width="20" height="20" /></div>
+		<div id="trigger225"><img src="x.gif" width="20" height="20" /></div>
+		<div id="trigger180"><img src="x.gif" width="20" height="20" /></div>
+		<div id="trigger135"><img src="x.gif" width="20" height="20" /></div>
+	</div>
+
+</body>
+
+</html>

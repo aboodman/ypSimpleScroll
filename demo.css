@@ -1,0 +1,15 @@
+body, td {
+	font-family:geneva, verdana, arial, sans-serif;
+	font-size:10px;
+	color:#333333;
+}
+
+body {
+	background-color:#FAF7E1; 
+}
+
+/* this is just a hack to fix the font-size problem in navigator 4 - it ignores styles inside @media
+   really has nothing to do with the scroller - i'm just too picky about the fontsize. */
+@media all {
+	body, td { font-size:9px;
+}

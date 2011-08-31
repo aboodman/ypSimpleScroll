@@ -1,0 +1,68 @@
+<html>
+<head>
+	<title>youngpup.net: ypSimpleScroll demo</title>
+	<script language="javascript" src="../ypSimpleScrollC.js"></script>
+	<script language="javascript">
+		var test = new ypSimpleScroll("myScroll", 20, 125, 150, 250, 100)
+
+		function dial_DoFSCommand(command, args) { 
+			if (test.loaded && command == "jumpToPercent" ) { 
+				test.jumpTo(0, Math.round((test.docH-test.clipH) / 100 * args))				
+			} 
+		}
+	</script>
+	<script language="vbscript">
+	<!-- 
+		Sub dial_FSCommand(ByVal command, ByVal args)
+			call dial_DoFSCommand(command, args)
+		end sub
+	//-->
+	</script>
+
+	<style type="text/css">
+		/* just basic text formatting - nothing special */
+		@import "/_common/demo.css";
+		
+		#dialDiv {
+			text-align:center;
+			position:absolute;
+			width:15px;
+			left:170px;
+			top:125px;
+		}
+	</style>
+</head>
+
+<body style="background-color:white;" onload="test.load()">
+	<div id="dialDiv">
+		<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+		 codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0"
+		 WIDTH=125 HEIGHT=250 ID=dial>
+		 <PARAM NAME=movie VALUE="dial.swf"> <PARAM NAME=quality VALUE=high> <PARAM NAME=bgcolor VALUE=#FFFFFF> <EMBED name="dial" src="dial.swf" quality=high bgcolor=#FFFFFF  WIDTH=125 HEIGHT=250 TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" swLiveConnect="true"></EMBED>
+		</OBJECT>
+	</div>
+
+	<p>
+		<b>Use the wheel below to control the scrollbox.</b><br />If you don't see a wheel, or the wheel doesn't seem to do anything, it means either you haven't got the <a href="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" target="_blank" title="what are you waiting for? go get it!">flash 5</a> player - or you're using Mozilla, which doesn't support flash/javascript communication yet. sorry.
+	</p>
+
+	<div id="myScrollContainer">
+		<div id="myScrollContent">
+			Okay I know the graphics are ugly, but it's the best I could come up with quickly.<br /><br />
+			Anyway, I never said I was a designer :)<br /><br />
+			Point is, this demo uses an instance of <a href="http://www.youngpup.net/components/ypRing" target="_blank">ypRing</a> to control the scrolling.<br /><br />
+			You could do something nicer, I'm sure.<br /><br />
+			But's it's just an example of how you can make different things control ypSimpleScroll, not just little pixel triangles.<br /><br />
+			Actually this stupid idea sparked a really interesting discussion between me and <a href="http://www.jesterworld.net/" target="_blank">brandon</a>, and I'm going to be diving into a much cooler scroll box idea based on it. I'm pretty excited about it. You can check out the progress <a href="http://www.youngpup.net/experiments/three.oh_news_scroller/" target="_blank">here</a>.<br /><br />
+			Now, just so this thing scrolls a bit more, I'm just gonna repeat the same damn thing over and over again to take up some space.<br /><br />
+			Now, just so this thing scrolls a bit more, I'm just gonna repeat the same damn thing over and over again to take up some space.<br /><br />
+			Now, just so this thing scrolls a bit more, I'm just gonna repeat the same damn thing over and over again to take up some space.<br /><br />
+			Now, just so this thing scrolls a bit more, I'm just gonna repeat the same damn thing over and over again to take up some space.<br /><br />
+			Now, just so this thing scrolls a bit more, I'm just gonna repeat the same damn thing over and over again to take up some space.<br /><br />
+			Now, just so this thing scrolls a bit more, I'm just gonna repeat the same damn thing over and over again to take up some space.<br /><br />
+			Now, just so this thing scrolls a bit more, I'm just gonna repeat the same damn thing over and over again to take up some space.<br /><br />
+		</div>
+	</div>
+</body>
+
+</html>

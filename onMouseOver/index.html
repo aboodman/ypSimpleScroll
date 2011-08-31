@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title>youngpup.net: ypSimpleScroll demo</title>
+	<script language="javascript" src="../ypSimpleScrollC.js"></script>
+	<script language="javascript">
+		var test  = new ypSimpleScroll("myScroll", 20, 50, 150, 250, 40, 200)
+	</script>
+
+	<style type="text/css">
+	<!--
+		/* just basic text formatting - nothing special */
+		@import "/_common/demo.css";
+	-->
+	</style>
+
+</head>
+
+<body onload="test.load()">
+	<a href="#" onmouseover="test.scrollNorth()" onmouseout="test.endScroll()">up</a>
+	<a href="#" onmouseover="test.scrollSouth()" onmouseout="test.endScroll()">down</a>
+	<a href="#" onmouseover="test.scrollWest()" onmouseout="test.endScroll()">left</a>
+	<a href="#" onmouseover="test.scrollEast()" onmouseout="test.endScroll()">right</a>
+	&nbsp;&nbsp;&nbsp; &lt;- <b>mouseover</b> these links to activate the scroller.<br />
+	<div id="myScrollContainer">
+		<div id="myScrollContent">
+			<!-- this nested table is only necessary if you're using horizontal scrolling, and are targeting navigator 4 -->
+			<table width="200" cellpadding="0" cellspacing="0" border="0">
+			<tr><td>
+				<p>this here is a bunch of content.</p>
+				<p>the reason i've taken the time to write actual content is because <a href="http://www.jesterworld.net/" target="_blank">brandon</a> bitched that there wasn't any.</p>
+				<p>before it was just fake content in here. actually, it was the word "content" repeated over and over.</p>
+				<p>i guess he's got a point, tho. on some OS's it was hard to tell anything was happening when it was the same word over and over.</p>
+				<p>speaking of different OS's, mac and win9x users will be happy to note that ypSimpleScroll uses the same nifty frame-dropping animation algorithm that most other yp-components use. this means that all users, regardless of their platform or processor speed, will see the scroll box move at the same speed.</p>
+				<p>"smoothness" is definately compromised on some crappy systems (mac netscape, win95), but atleast the user won't be sitting around for an hour waiting for the damned thing to scroll...</p>
+			</td></tr>
+			</table>
+		</div>
+	</div>
+</body>
+
+</html>
