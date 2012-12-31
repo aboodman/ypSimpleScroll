@@ -1,7 +1,7 @@
 /* =======================================================
  * ypSimpleScroll
  * 3/11/2001
- * 
+ *
 // dhtml scrolling panel featuring scrolling in any
 // direction, smooth frame-dropping animation, and a
 // few other goodies.
@@ -25,13 +25,13 @@
 // 8/22/2001
 // if you tried to scroll before page was loaded it threw
 // an error. this should be fixed now.
-// 
+//
 //
  * http://www.youngpup.net/
 //
 // =======================================================
-// ypSimpleScroll(	id, left, top, width, height, speed, 
-//					contentWidth, initScrollLeft, 
+// ypSimpleScroll(	id, left, top, width, height, speed,
+//					contentWidth, initScrollLeft,
 //					initScrollTop	)
 //
 // last three parameters are optional.
@@ -93,7 +93,7 @@ ypSimpleScroll.prototype.overrideScrollAngle = function(deg) {
 }
 
 // override the speed for the current scroll.
-// should not be used with scrollTo, unless you want to 
+// should not be used with scrollTo, unless you want to
 // override the speed computed from the aniLen param of scrollTo()
 ypSimpleScroll.prototype.overrideScrollSpeed = function(speed) {
 	if (this.loaded) this.speed = speed
@@ -121,7 +121,7 @@ ypSimpleScroll.prototype.scrollTo = function(stopH, stopV, aniLen) {
 }
 
 // jump to an arbitrary position in two dimensions.
-ypSimpleScroll.prototype.jumpTo = function(nx, ny) { 
+ypSimpleScroll.prototype.jumpTo = function(nx, ny) {
 	if (this.loaded)
 	{
 		nx = Math.min(Math.max(nx, 0), this.scrollW)
